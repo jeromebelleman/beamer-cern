@@ -1,0 +1,27 @@
+% Jerome Belleman <Jerome.Belleman@cern.ch>, March 2015
+
+\mode<presentation>
+
+\newlength{\titlelf}
+\setlength{\titlelf}{-9pt}
+
+\defbeamertemplate*{title page}{cern}
+{
+  \vfill
+  \vspace{31pt}
+  \begin{beamercolorbox}[leftskip=\titlelf]{title}
+    \usebeamerfont{title}\inserttitle
+  \end{beamercolorbox}
+  \vspace{11pt}
+  \begin{beamercolorbox}[leftskip=\titlelf]{title}
+    \usebeamerfont{author}\insertauthor
+  \end{beamercolorbox}
+  \vfill
+}
+
+\defbeamertemplate*{itemize item}{cern}{%
+  \raise3pt\hbox{\textbullet}%
+}
+
+\mode
+<all>

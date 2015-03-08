@@ -1,0 +1,53 @@
+% Jerome Belleman <Jerome.Belleman@cern.ch>, March 2015
+
+\usepackage{calc}
+\mode<presentation>
+
+% Lengths: trust Inkscape to measure them, PowerPoint if far too approximate
+
+\newlength{\footlinedp}
+\setlength{\footlinedp}{7.127mm * \ratio{128mm}{254mm}}
+\newlength{\footlineht}
+\setlength{\footlineht}{19.454mm * \ratio{128mm}{254mm} - \footlinedp}
+\newlength{\footlinesk}
+\setlength{\footlinesk}{3.338mm * \ratio{128mm}{254mm}}
+
+\newlength{\logowd}
+\setlength{\logowd}{14.046mm * \ratio{128mm}{254mm}}
+\pgfdeclareimage[width=\logowd]{cern-faded}{cern-faded}
+\newlength{\logolw}
+\setlength{\logolw}{\footlinedp - 2.392mm * \ratio{128mm}{254mm}}
+
+\newlength{\footlinetextwd}
+\setlength{\footlinetextwd}{80pt}
+
+
+\defbeamertemplate*{footline}{cern}
+{
+  \ifbeamer@cern@cover
+  \else
+    \begin{beamercolorbox}[wd=\paperwidth,dp=\footlinedp,ht=\footlineht,
+                           leftskip=\footlinesk,
+                           rightskip=\footlinesk]{footline}%
+      \usebeamerfont{title in head/foot}%
+      \lower\logolw\hbox{\pgfuseimage{cern-faded}}%
+      \hfill\makebox[\footlinetextwd][l]{\insertshortdate}%
+      \makebox[\footlinetextwd][c]{\insertshorttitle}%
+      \makebox[\footlinetextwd][r]{\insertframenumber}%
+    \end{beamercolorbox}%
+  \fi
+}
+
+\defbeamertemplate*{frametitle}{cern}
+{
+  \vspace{16pt}
+  \begin{beamercolorbox}[leftskip=\titlelf]{title} % FIXME Refactor \titlelf
+    \usebeamerfont{frametitle}%
+    \insertframetitle 
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{navigation symbols}{cern}{}
+
+\mode
+<all>
