@@ -2,19 +2,22 @@
 
 \mode<presentation>
 
-\newlength{\titlelf}
-\setlength{\titlelf}{-9pt}
-
 \defbeamertemplate*{title page}{cern}
 {
-  \vfill
-  \vspace{31pt}
+  \vspace{42pt}
   \begin{beamercolorbox}[leftskip=\titlelf]{title}
     \usebeamerfont{title}\inserttitle
   \end{beamercolorbox}
-  \vspace{11pt}
-  \begin{beamercolorbox}[leftskip=\titlelf]{title}
+  \vspace{2pt}
+  \begin{beamercolorbox}[leftskip=\titlelf]{author}
     \usebeamerfont{author}\insertauthor
+  \end{beamercolorbox}
+}
+
+\defbeamertemplate*{section page}{cern}{
+  \vfill
+  \begin{beamercolorbox}[leftskip=\titlelf]{section title}
+    \usebeamerfont{section title}\insertsection
   \end{beamercolorbox}
   \vfill
 }

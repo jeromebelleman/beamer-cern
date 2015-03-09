@@ -19,8 +19,10 @@
 \setlength{\logolw}{\footlinedp - 2.392mm * \ratio{128mm}{254mm}}
 
 \newlength{\footlinetextwd}
-\setlength{\footlinetextwd}{80pt}
+\setlength{\footlinetextwd}{140pt}
 
+\newlength{\numberwd}
+\setlength{\numberwd}{20pt}
 
 \defbeamertemplate*{footline}{cern}
 {
@@ -31,9 +33,9 @@
                            rightskip=\footlinesk]{footline}%
       \usebeamerfont{title in head/foot}%
       \lower\logolw\hbox{\pgfuseimage{cern-faded}}%
-      \hfill\makebox[\footlinetextwd][l]{\insertshortdate}%
+      \hfill\makebox[\footlinetextwd][c]{\insertshortdate}%
       \makebox[\footlinetextwd][c]{\insertshorttitle}%
-      \makebox[\footlinetextwd][r]{\insertframenumber}%
+      \makebox[\numberwd][r]{\insertframenumber}%
     \end{beamercolorbox}%
   \fi
 }
@@ -41,7 +43,7 @@
 \defbeamertemplate*{frametitle}{cern}
 {
   \vspace{16pt}
-  \begin{beamercolorbox}[leftskip=\titlelf]{title} % FIXME Refactor \titlelf
+  \begin{beamercolorbox}[leftskip=\titlelf]{title}
     \usebeamerfont{frametitle}%
     \insertframetitle 
   \end{beamercolorbox}
