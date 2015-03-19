@@ -43,7 +43,9 @@
 \defbeamertemplate*{frametitle}{cern}
 {
   \vspace{16pt}
-  \begin{beamercolorbox}[leftskip=\titlelf]{title}
+  % Set depth=0pt to avoid body position from depending on whether title
+  % text has any depth or not.
+  \begin{beamercolorbox}[dp=0pt,leftskip=\titlelf]{title}
     \usebeamerfont{frametitle}%
     \insertframetitle 
   \end{beamercolorbox}
