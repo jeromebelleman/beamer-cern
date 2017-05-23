@@ -14,7 +14,7 @@
 
 \newlength{\logowd}
 \setlength{\logowd}{14.046mm * \ratio{128mm}{254mm}}
-\pgfdeclareimage[width=\logowd]{cern-faded}{cern-faded}
+\pgfdeclareimage[width=\logowd]{smalllogo}{cern-logo}
 \newlength{\logolw}
 \setlength{\logolw}{\footlinedp - 2.392mm * \ratio{128mm}{254mm}}
 
@@ -32,7 +32,7 @@
                            leftskip=\footlinesk,
                            rightskip=\footlinesk]{footline}%
       \usebeamerfont{title in head/foot}%
-      \lower\logolw\hbox{\pgfuseimage{cern-faded}}%
+      \lower\logolw\hbox{\pgfuseimage{smalllogo}}%
       \hfill\makebox[\footlinetextwd][c]{\insertshortdate}%
       \makebox[\footlinetextwd][c]{\insertshorttitle}%
       \makebox[\numberwd][r]{\insertframenumber}%

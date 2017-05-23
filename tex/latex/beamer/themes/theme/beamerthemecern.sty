@@ -19,16 +19,34 @@
 
 \pgfdeclareimage[width=\paperwidth]{cern-frontcover}{cern-frontcover}
 \pgfdeclareimage[width=\paperwidth]{cern-backcover}{cern-backcover}
+\pgfdeclareimage[width=100pt]{frontlogo}{cern-logo}
+\pgfdeclareimage[width=62pt]{backlogo}{cern-logo}
 
 \newcommand{\frontcover}{
   \beamer@cern@covertrue
-  {\usebackgroundtemplate{\pgfuseimage{cern-frontcover}}\frame{}}
+  {
+    \setbeamercolor{background canvas}{bg=cern}
+    \frame{
+      \vspace{49pt}
+      \centerline{\pgfuseimage{frontlogo}}
+    }
+  }
   \beamer@cern@coverfalse
 }
 
 \newcommand{\backcover}{
   \beamer@cern@covertrue
-  {\usebackgroundtemplate{\pgfuseimage{cern-backcover}}\frame{}}
+  {
+    \setbeamercolor{background canvas}{bg=cern}
+    \frame{
+      \vspace{105pt}
+      \centerline{\pgfuseimage{backlogo}}
+      \vspace{76pt}
+      \centerline{%
+        \scriptsize\color{cern!50!white}\href{http://home.cern}{home.cern}
+      }
+    }
+  }
   \beamer@cern@coverfalse
 }
 
